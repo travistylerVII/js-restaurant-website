@@ -183,7 +183,7 @@ select {
   gap: 20px;
 }
 
-.featured__panel {
+.menu__panel {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 0px 20px #1c233320;
@@ -191,7 +191,7 @@ select {
   text-align: center;
 }
 
-.featured__panel img {
+.menu__panel img {
   width: 100%;
 }
 
