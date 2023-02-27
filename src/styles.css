@@ -7,6 +7,15 @@
   src: url("assets/gangofthree.ttf");
 }
 
+:root {
+  --primary-font: gangofthree;
+  --secondary-font: floodstd;
+  --text-font: Arial, Helvetica, sans-serif;
+  --accent-font: gangofthree;
+  --primary-color: #363638;
+  --accent-color: #b92b2b;
+}
+
 /* RESET ----------- */
 /* Box sizing rules */
 *,
@@ -84,15 +93,6 @@ select {
 }
 
 /* GLOBAL */
-
-:root {
-  --primary-font: gangofthree;
-  --secondary-font: floodstd;
-  --text-font: Arial, Helvetica, sans-serif;
-  --accent-font: gangofthree;
-  --primary-color: #363638;
-  --accent-color: #b92b2b;
-}
 
 * {
   font-family: var(--text-font);
@@ -215,6 +215,12 @@ select {
 .about__text-area {
   display: grid;
   margin: auto;
+}
+
+.about__text-area h2 {
+  font-family: var(--primary-font);
+  color: var(--accent-color);
+  font-size: 2em;
 }
 
 /* LOCATION SECTION */

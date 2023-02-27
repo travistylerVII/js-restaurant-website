@@ -3,6 +3,7 @@ import menuItem1 from '../assets/sushi_plate_1@2x.jpg'
 import menuItem2 from '../assets/sushi_plate_2@2x.jpg'
 import menuItem3 from '../assets/sushi_plate_3@2x.jpg'
 import aboutImage from '../assets/about_img.jpg'
+import locationImage from '../assets/location_img.jpg'
 
 
 const body = document.querySelector('body');
@@ -62,7 +63,6 @@ const createFeatured = () => {
 
     featuredRow.appendChild(featuredItem2);
 
-
     //Featured Item3
     const featuredItem3Image = menuItem3;
     const featuredItem3Name = 'Sushi Plate 2';
@@ -71,8 +71,6 @@ const createFeatured = () => {
     const featuredItem3 = menuPanel(featuredItem3Image, featuredItem3Name, featuredItem3Price, featuredItem3Description);
 
     featuredRow.appendChild(featuredItem3);
-
-    
 
     //Featured BTN Area
     const featuredBtnArea = createElement('div', 'featured__btn-area');
@@ -115,12 +113,50 @@ const createAbout = () => {
     aboutImageArea.appendChild(aboutImg);
 };
 
+const createLocation = () => {
 
+    const locationSection = createElement('section', 'location__section');
+    body.appendChild(locationSection);
+
+    const locationContainer = createElement('div', 'container');
+    locationSection.appendChild(locationContainer);
+
+    const locationPanel = createElement('div', 'location__panel');
+    locationContainer.appendChild(locationPanel);
+
+    const locationPanelImg = createElement('img', 'location__img');
+    locationPanelImg.src = locationImage;
+    locationPanel.appendChild(locationPanelImg);
+ 
+    const locationPanelHeader = createElement('h3', 'location__header');
+    locationPanelHeader.textContent = 'Sushi Express';
+    locationPanel.appendChild(locationPanelHeader);
+
+    const locationPanelUl = document.createElement('ul')
+    locationPanel.appendChild(locationPanelUl);
+
+    const locationHoursLi = document.createElement('li')
+    locationHoursLi.textContent = 'Hours: Mon - Fri / 9am - 5pm'
+    locationPanelUl.appendChild(locationHoursLi)
+
+    const locationAddressLi = document.createElement('li');
+    locationAddressLi.textContent = '1345 Sushi Road, 33445, Phx AZ';
+    locationPanelUl.appendChild(locationAddressLi);
+
+    const locationPhone = document.createElement('li');
+    locationPhone.textContent = '(534) 335-4555'
+    locationPanel.appendChild(locationPhone);
+
+    const locationEmail = document.createElement('li');
+    locationEmail.textContent = 'orders@sushiexpress.com';
+    locationPanelUl.appendChild(locationEmail);
+}
 
 const loadHome = () => {
     createHero()
     createFeatured()
     createAbout()
+    createLocation()
 }
 
 export default loadHome
