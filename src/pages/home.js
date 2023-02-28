@@ -1,10 +1,10 @@
 import { createElement, menuPanel } from '../utils/utils.js'
-import menuItem1 from '../assets/sushi_plate_1@2x.jpg'
-import menuItem2 from '../assets/sushi_plate_2@2x.jpg'
-import menuItem3 from '../assets/sushi_plate_3@2x.jpg'
 import aboutImage from '../assets/about_img.jpg'
 import locationImage from '../assets/location_img.jpg'
-
+import menuData from '../menu-data.json';
+import '../assets/sushi_plate_1@2x.jpg';
+import '../assets/sushi_plate_2@2x.jpg';
+import '../assets/sushi_plate_3@2x.jpg';
 
 const body = document.querySelector('body');
 
@@ -45,32 +45,23 @@ const createFeatured = () => {
     const featuredRow = createElement('div', 'featured__row');
     featuredContainer.appendChild(featuredRow);
 
-    //Featured Item 1
-    const featuredItem1Image = menuItem1;
-    const featuredItem1Name = 'Sushi Plate 1';
-    const featuredItem1Price = '$14.99';
-    const featuredItem1Description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!';
-    const featuredItem1 = menuPanel(featuredItem1Image, featuredItem1Name, featuredItem1Price, featuredItem1Description);
 
-    featuredRow.appendChild(featuredItem1);
+    //DISHES
+    const dishes = menuData.menu;
+    console.log(dishes)
 
-    //Featured Item2
-    const featuredItem2Image = menuItem2;
-    const featuredItem2Name = 'Sushi Plate 2';
-    const featuredItem2Price = '$12.99';
-    const featuredItem2Description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!';
-    const featuredItem2 = menuPanel(featuredItem2Image, featuredItem2Name, featuredItem2Price, featuredItem2Description);
-
-    featuredRow.appendChild(featuredItem2);
-
-    //Featured Item3
-    const featuredItem3Image = menuItem3;
-    const featuredItem3Name = 'Sushi Plate 2';
-    const featuredItem3Price = '$16.99';
-    const featuredItem3Description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!';
-    const featuredItem3 = menuPanel(featuredItem3Image, featuredItem3Name, featuredItem3Price, featuredItem3Description);
-
-    featuredRow.appendChild(featuredItem3);
+    for (const dish in dishes) {
+        if (dishes[dish].featured){
+            console.log(dishes[dish].name)
+            const featuredItemImage = dishes[dish].image;
+            const featuredItemName = dishes[dish].name;
+            const featuredItemPrice = dishes[dish].price;
+            const featuredItemDescription = dishes[dish].description;
+            const featuredItem = menuPanel(featuredItemImage, featuredItemName, featuredItemPrice, featuredItemDescription);
+    
+            featuredRow.appendChild(featuredItem);
+        }
+    }
 
     //Featured BTN Area
     const featuredBtnArea = createElement('div', 'featured__btn-area');
@@ -157,6 +148,7 @@ const loadHome = () => {
     createFeatured()
     createAbout()
     createLocation()
+   
 }
 
 export default loadHome

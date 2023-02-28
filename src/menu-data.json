@@ -1,0 +1,33 @@
+{
+    "restaurant": "Sushi Express",
+    "menu": [
+      {
+        "image": "sushi_plate_1@2x.jpg",
+        "name": "Sushi Dish 1",
+        "price": "$14.99",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum",
+        "featured": true
+      },
+      {
+        "image": "sushi_plate_2@2x.jpg",
+        "name": "Sushi Dish 2",
+        "price": "$12.99",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum",
+        "featured": true
+      },
+      {
+        "image": "sushi_plate_3@2x.jpg",
+        "name": "Sushi Dish 3",
+        "price": "$15.99",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum",
+        "featured": true
+      },
+      {
+        "image": "sushi_plate_1@2x.jpg",
+        "name": "Sushi Dish 4",
+        "price": "$9.99",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum",
+        "featured": false
+      }
+    ]
+  }
